@@ -6,10 +6,8 @@ App that gives users a platform to trade their favorite books!
 
 ##### I learned
 
- - How to connect to a third party API for stocks data.
- - How to add datasets to Chart.js dynamically
- - How to dynamically change css colors with JavaScript
- - How to put a picture in a README.
+ - How to connect to a third party API for book data.
+ - How to solve CSRF errors
  - Chinese internet terms
 
 
@@ -18,7 +16,6 @@ App that gives users a platform to trade their favorite books!
  - Express.js
  - Node.js
  - JavaScript
- - Chart.js
  - HTML5
  - CSS3
  - RESTful APIs

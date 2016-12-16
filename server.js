@@ -13,7 +13,7 @@ var flash = require('connect-flash');
 
 var routes = require('./routes/index');
 require('./config/passport');
-mongoose.connect('localhost:27017/bookapp');
+mongoose.connect(process.env.MONGO_URI);
 
 var app = express();
 

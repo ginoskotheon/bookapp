@@ -17,7 +17,7 @@ require('dotenv').load();
 
 
 require('./config/passport');
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect('localhost:27017/bookapp');
 
 
 

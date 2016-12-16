@@ -1,15 +1,14 @@
 <div class="row">
 
   <div id="mybookList">
+    <input id="cToken" type="hidden" name="_csrf" value="{{csrfToken}}" />
     {{#each data}}
   <div class='col-md-3'>
-
       <div class="books">{{this.title}} by: {{this.author}} </div><div id="thumbwrap" class="thumbwrap"><img id="thumb" class="thumb" src='{{this.thumb}}'  /></div>
-      </div><!--end col-->
-      {{/each}}
-    </div>
+      <div class="tobedeleted"><i class="fa fa-times-circle" class="deletemine" id="deletemine"></i></div>
+  </div><!--end col-->
+  {{/each}}
+</div>
 
 
 </div><!--end row-->
-
-<!-- <div class="books">{{this.title}} by: {{this.author}} </div><div id="thumbwrap" class="thumbwrap"><img id="thumb" class="thumb" src='{{this.thumb}}'  /></div> -->

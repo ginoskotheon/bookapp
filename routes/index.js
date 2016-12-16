@@ -78,7 +78,7 @@ router.post('/allbooks', isLoggedIn, function(req,res,next){
   var id = req.user._id;
   var csrf = req.body._csrf;
   var url = req.body.url;
-  // console.log(csrf);
+  // console.log(url);
   request(url, function(err, resp, body){
      var data = JSON.parse(body);
     //  console.log(data);
@@ -86,10 +86,16 @@ router.post('/allbooks', isLoggedIn, function(req,res,next){
     var author = data.volumeInfo.authors[0];
     var thumb = data.volumeInfo.imageLinks.smallThumbnail;
     // console.log(thumb);
+    var thumbray = thumb.split("");
+    // console.log(thumbray);
+    var thumbsplice = thumbray.splice(4, 0,"s");
+    // console.log(thumbray);
+    var thumbsecure = thumbray.join('');
+    console.log(thumbsecure);
     var obj = {
       title: title,
       author: author,
-      thumb: thumb
+      thumb: thumbsecure
     }
     var obj2 = {
       user: id,
@@ -97,10 +103,10 @@ router.post('/allbooks', isLoggedIn, function(req,res,next){
       lastname: lastname,
       title: title,
       author: author,
-      thumb: thumb
+      thumb: thumbsecure
     }
-    var pushed = {$push: {books: obj}};
-    var pushed2 = {$push: {library: obj2}};
+    var pushed = {$addToSet: {books: obj}};
+    var pushed2 = {$addToSet: {library: obj2}};
     User.update({_id: req.user._id},pushed).then(function(data){
       // console.log(data);
     });
@@ -177,7 +183,7 @@ router.get('/mytrades', isLoggedIn, function(req,res,next){
 router.get('/mybooks', isLoggedIn, function(req,res,next){
   var bookshelf = req.user.books;
   // console.log(bookshelf);
-  res.render('mybooks', {data: bookshelf});
+  res.render('mybooks', {data: bookshelf, csrfToken: req.csrfToken()});
 });
 
 router.get('/thankyou', isLoggedIn, function(req, res, next){
@@ -200,14 +206,29 @@ router.post('/mytrader', isLoggedIn, function(req,res){
 router.post('/myrequested', isLoggedIn, function(req,res){
   var item = req.body.item;
   var id = req.user._id
-  console.log(item);
-  console.log(id);
+  // console.log(item);
+  // console.log(id);
 
   User.update({_id: id }, {$pull: {"trades.traderequests": {thumb: item}}}).then(function(err,data){
     if (err) throw err;
-    console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
 
   });
+  res.redirect('back');
+});
+
+router.post('/mine', isLoggedIn, function(req,res){
+  var item = req.body.item;
+  var id = req.user._id
+  // console.log(item);
+  // console.log(id);
+
+  User.update({_id: id }, {$pull: {"books": {thumb: item}}}).then(function(err,data){
+    if (err) throw err;
+    // console.log(JSON.stringify(data));
+
+  });
+  Books.update({admin: 'William McDonald'}, {$pull: {"library": {thumb: item}}}).then(function(err,data){});
   res.redirect('back');
 });
 

@@ -318,3 +318,11 @@ i {
 #deleted:hover {
   font-size: 18px;
 }
+
+#deletemine {
+  color: red;
+  cursor: pointer;
+}
+#deletemine:hover {
+  font-size: 18px;
+}

@@ -2,7 +2,7 @@
 ![alt stocks](https://github.com/ginoskotheon/bookapp/blob/master/public/assets/img/books.jpg)
 ##### by William McDonald
 
-Single Page App that charts the stock market using data from the Markit on demand Market Data API. Chart updates for all users in real time whenever a stock is added or removed.
+App that gives users a platform to trade their favorite books!
 
 ##### I learned
 
@@ -10,6 +10,7 @@ Single Page App that charts the stock market using data from the Markit on deman
  - How to add datasets to Chart.js dynamically
  - How to dynamically change css colors with JavaScript
  - How to put a picture in a README.
+ - Chinese internet terms
 
 
 ##### Skills used
@@ -30,8 +31,9 @@ Single Page App that charts the stock market using data from the Markit on deman
  - User Story: I can propose a trade and wait for the other user to accept the trade.
 
 ##### Known issues
- - 
+ - When the user profile is updated after a book search, it doesn't update everywhere.
 
 ##### View a live demo:
 
+https://bookappwm.herokuapp.com/
 

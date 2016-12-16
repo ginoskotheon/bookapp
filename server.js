@@ -9,15 +9,17 @@ var session = require('express-session');
 var csrf = require('csurf');
 var expressValidator = require('express-validator');
 var flash = require('connect-flash');
-
-
 var routes = require('./routes/index');
-require('./config/passport');
-mongoose.connect(process.env.MONGO_URI);
 
 var app = express();
 
 require('dotenv').load();
+
+
+require('./config/passport');
+mongoose.connect(process.env.MONGO_URI);
+
+
 
 var handlebars = require('express-handlebars').create({defaultLayout: 'main'});
 app.engine('handlebars', handlebars.engine);

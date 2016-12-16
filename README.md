@@ -31,7 +31,7 @@ App that gives users a platform to trade their favorite books!
  - User Story: I can propose a trade and wait for the other user to accept the trade.
 
 ##### Known issues
- - When the user profile is updated after a book search, it doesn't update everywhere.
+ - I had to intialize the "library" in the db.
 
 ##### View a live demo:
 

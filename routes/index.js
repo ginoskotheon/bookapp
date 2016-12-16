@@ -216,7 +216,7 @@ router.get('/logout', isLoggedIn, function(req, res, next){
   res.redirect('/');
 });
 router.get('/', notLoggedIn, function(req, res, next){
-  res.render('index');
+  res.render('index', {layout: 'pre'});
 });
 
 router.get('/register', function(req, res){

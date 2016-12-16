@@ -17,6 +17,7 @@ mongoose.connect('localhost:27017/bookapp');
 
 var app = express();
 
+require('dotenv').load();
 
 var handlebars = require('express-handlebars').create({defaultLayout: 'main'});
 app.engine('handlebars', handlebars.engine);

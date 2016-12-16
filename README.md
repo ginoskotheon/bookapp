@@ -1,5 +1,5 @@
 #STOCKS APP
-![alt stocks](https://github.com/ginoskotheon/bookapp/blob/master/public/assets/books.jpg)
+![alt stocks](https://github.com/ginoskotheon/bookapp/blob/master/public/assets/img/books.jpg)
 ##### by William McDonald
 
 Single Page App that charts the stock market using data from the Markit on demand Market Data API. Chart updates for all users in real time whenever a stock is added or removed.

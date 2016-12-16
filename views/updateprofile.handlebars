@@ -1,0 +1,50 @@
+<div>
+  <form  action='/updated' method="POST" >
+    <input type="hidden" name="_csrf" value={{csrfToken}}>
+    <div class="row">
+      <label for="firstname" class="col-sm-2">
+      First Name: </label>
+      <div class="col-sm-10">
+
+        <input type="text" class="form-control" id="firstname"
+        name="firstname" >
+      </div>
+    </div> <!-- End of form-group -->
+    <div class="row">
+      <label for="lastname" class="col-sm-2">
+      Last Name: </label>
+      <div class="col-sm-10">
+
+        <input type="text" class="form-control" id="lastname"
+        name="lastname" >
+      </div>
+    </div> <!-- End of form-group -->
+    <div class="row">
+      <label for="city" class="col-sm-2">
+      City: </label>
+      <div class="col-sm-10">
+
+        <input type="text" class="form-control" id="city"
+        name="city" >
+      </div>
+    </div> <!-- End of form-group -->
+    <div class="row">
+      <label for="state" class="col-sm-2">
+      State: </label>
+      <div class="col-sm-10">
+
+        <input type="text" class="form-control" id="state"
+        name="state" >
+      </div>
+    </div> <!-- End of form-group -->
+
+    <div class="row loginButton">
+
+      <div class="col-sm-12">
+        <button type="submit" >Submit</button>
+      </div>
+
+    </div> <!-- End of form-group -->
+
+  </form>
+</div>

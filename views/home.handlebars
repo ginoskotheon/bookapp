@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6">
+    <a href='/traderequests'><div id="mybooks">  Trades Requests  <span id="count">{{ trades }}</span></div></a>
+  </div>
+  <div class="col-md-6">
+    <a href='/mytrades'><div id="mytrades"> My Trades Requests  <span id="count">{{ mytrades }}</span></div></a>
+  </div>
+</div><!--end row-->
+
+<div class='row'>
+  <div class='col-md-12'>
+    <h1 class="text-center">Add a Book</h1>
+    <form class="text-center">
+      <input type="hidden" name="_csrf" value={{csrfToken}}>
+      <input id="search" name="title" placeholder="Title or Author" />
+      <button class="text-center" id="button" type="button">Search</button>
+    </form>
+  </div><!--end col-->
+</div><!--end row-->
+<div class='row'>
+    <input id="token" type="hidden" name="_csrf" value={{csrfToken}} />
+      <div id="results"></div>
+
+</div><!--end row-->

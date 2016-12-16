@@ -1,0 +1,28 @@
+<div class="row">
+  <div id="allbookList">
+    {{#each data}}
+  <div class='col-md-3'>
+      <div class="books" name="book">{{this.title}} by: {{this.author}}</div>
+      <div id="thumbwrap" class="thumbwrap"><img id="thumb" class="thumb" src='{{this.thumb}}'  /></div>
+      <div class="owner">Owner: <span class='firstname' id="firstname" value="{{this.firstname}}">{{this.firstname}}</span> <span class='lastname' id="lastname">{{this.lastname}}</span> <span class="toTrade" id="toTrade"> <img id="trade" src="/assets/img/trade.ico"/></span></div>
+      <input  type="hidden" class="identity" name="identity" value="{{this.user}}">
+      </div><!--end col-->
+      {{/each}}
+  </div>
+  <div id="myModal" class="myModal">
+    <div class="propose_trade" id="propose_trade">
+      <span class="close">&times;</span>
+      <form name="formed" id="formed" action='/trading' method='POST'>
+        <input id="thisToken" type="hidden"  name="_csrf" value="{{csrfToken}}">
+        <input  type="hidden" class="first" name="first" value="first">
+        <input type="hidden" class="last" name="last" value="last">
+        <input   type="hidden" class="thumbness" name="thumbness" value="thumb">
+        <input  type="hidden" class="identified" name="identified" value="user">
+        <input  class="subjected" type="text" name="subject" placeholder="Subject"/>
+        <textarea class="textArea" name="comment"  placeholder="Enter text here ..."></textarea>
+        <div id="thumbwrapped" class="thumbwrapped"><img id="thumbnail" class="thumbnail" src='' /></div>
+        <button class='btn btn-primary' form="formed" type ="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div><!--end row-->

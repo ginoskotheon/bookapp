@@ -1,0 +1,15 @@
+<div class="row">
+  <div id="allbookList">
+    <input id="bToken" type="hidden" name="_csrf" value="{{csrfToken}}" />
+    {{#each data}}
+  <div class='col-md-3'>
+      <!-- <div class="books" name="book">{{this.title}} by: {{this.author}}</div>-->
+      <div id="thumbwrap" class="thumbwrap"><img id="thumb" class="thumb" src='{{this.thumb}}'  /></div>
+      <div class="owner">From: {{this.firstname}} {{this.lastname}}<i class="fa fa-times-circle" class="deleted" id="deleted"></i></span></div>
+      <div class="email"><strong>Email:</strong>  <i>{{ this.email }}</i></div>
+      <div class="subject"><strong>Subject:</strong> <i>{{ this.subject }}</i></div>
+      <div class="msg"><strong>Comment:</strong> <i>{{this.msg}}</i></div>
+    </div><!--end col-->
+    {{/each}}
+  </div>
+</div><!--end row-->

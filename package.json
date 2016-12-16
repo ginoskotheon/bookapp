@@ -1,0 +1,31 @@
+{
+  "name": "bookroom",
+  "version": "1.0.0",
+  "description": "![alt stocks](https://github.com/ginoskotheon/stockapp/blob/master/public/assets/stocks.png)\r ##### by William McDonald",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "William McDonald",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.14.1",
+    "express-validator": "^2.20.10",
+    "formidable": "^1.0.17",
+    "handlebars": "^4.0.5",
+    "mongoose": "^4.6.3",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "request": "^2.79.0"
+  }
+}

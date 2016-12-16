@@ -1,0 +1,45 @@
+<div>
+	<div class="login">
+
+		{{# if errors }}
+		<section class="errors">
+		 <ul>
+			{{#each errors }}
+			<li>
+				{{ this.msg }}
+			</li>
+			{{/each}}
+		 </ul>
+		</section>
+		{{/if}}
+
+      <form class="formLogin" method="POST">
+				<input type="hidden" name="_csrf" value="{{csrfToken}}" />
+        <div class="row">
+          <label for="email" class="col-sm-2">
+          Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email"
+            name="email">
+          </div>
+
+        </div> <!-- End of form-group -->
+        <div class="row">
+          <label for="password" class="col-sm-2">
+          Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password"
+            name="password">
+          </div>
+        </div> <!-- End of form-group -->
+        <div class="row loginButton">
+
+          <div class="col-sm-12">
+            <button type="submit" >Submit</button>
+          </div>
+
+        </div> <!-- End of form-group -->
+
+      </form>
+	</div>
+</div>

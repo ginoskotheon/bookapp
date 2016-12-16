@@ -221,7 +221,7 @@ router.get('/', notLoggedIn, function(req, res, next){
 
 router.get('/register', function(req, res){
   var messages = req.flash('error');
-  res.render('register', { title: 'register', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
+  res.render('register', { title: 'register', layout: 'pre', csrfToken: req.csrfToken(), messages: messages, hasErrors: messages.length > 0 });
 });
 
 router.post('/register', passport.authenticate('local.signup', {
@@ -232,7 +232,7 @@ router.post('/register', passport.authenticate('local.signup', {
 
 router.get('/login', function(req, res){
   var messages = req.flash('error');
-  res.render('login', {csrfToken: req.csrfToken(), title: 'login', messages: messages, hasErrors: messages.length > 0 });
+  res.render('login', {layout: 'pre', csrfToken: req.csrfToken(), title: 'login', messages: messages, hasErrors: messages.length > 0 });
 
 });
 
